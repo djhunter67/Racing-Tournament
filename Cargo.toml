@@ -1,6 +1,26 @@
 [package]
-name = "wrestling_tournament"
+name = "racing_tournament"
 version = "0.1.0"
 edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "race"
+path = "src/main.rs"
+
+[profile.release]
+strip = true
+opt-level = 3
+lto = true
+codegen-units = 2
+panic = "abort"
+
+[lints.clippy]
+unwrap_used = "deny"
+enum_glob_use = "deny"
+pedantic = { level = "deny", priority = 1 }
+nursery = { level = "deny", priority = 1 }
 
 [dependencies]

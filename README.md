@@ -5,7 +5,7 @@ A tournament of 12 racers.  The tournament is hosted by the IOptoConCoin organiz
 
 ## Seeding
 
-The tournament tree will begin by randomly assigning the drivers a number.  The numbers will be from 1 to 12 and the racers will be paired against each other in numerical order.  The tournament is single elimination.  A chase is a race and a tire on the line is a loss.  
+The tournament tree will begin by randomly assigning the drivers a number.  The numbers will be from 1 to 12 and the racers will be paired against each other in numerical order.  The tournament is single elimination.  A chase is a race and a tire on the line is a loss.
 
 
 ## Technical
@@ -23,5 +23,4 @@ All cars will be required to have a full cage.  Cage must be roll-over rated.  E
 
 ## Betting
 
-There will be a venue for betting on each race.  The will be a 3.73% fee taken from all bets.  Payouts are guaranteed by the organizer of the race.  Calculations on the odds of every racer will be updated, immediately, after each race.  
-
+There will be a venue for betting on each race.  The will be a 3.73% fee taken from all bets.  Payouts are guaranteed by the organizer of the race.  Calculations on the odds of every racer will be updated, immediately, after each race.
