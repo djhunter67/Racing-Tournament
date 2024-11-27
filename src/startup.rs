@@ -3,7 +3,7 @@ use std::net;
 use actix_web::{http::KeepAlive, middleware, App, HttpServer};
 use tracing::{debug, info, instrument, warn};
 
-use crate::settings::Settings;
+use crate::{settings::Settings, statistics::health};
 
 pub const PARSE_COUNT: u8 = 9;
 
@@ -33,21 +33,21 @@ fn run(
             .wrap(middleware::Logger::default())
             .wrap(middleware::Compress::default())
             .wrap(middleware::DefaultHeaders::new().add(("X-Version", env!("CARGO_PKG_VERSION"))))
-        // .app_data(db_data.clone())
-        // .service(templates::favicon)
-        // .service(templates::logomain)
-        // .service(templates::stylesheet)
-        // .service(templates::source_map)
-        // .service(templates::htmx)
-        // .service(templates::hyperscript)
-        // .service(templates::response_targets)
-        // .service(templates::sse)
-        // .service(templates::action_script)
-        // .service(templates::gif)
-        // .service(index::index)
-        // .service(serial::devices)
-        // .service(serial::stop_device)
-        // .service(health::health_check)
+            // .app_data(db_data.clone())
+            // .service(templates::favicon)
+            // .service(templates::logomain)
+            // .service(templates::stylesheet)
+            // .service(templates::source_map)
+            // .service(templates::htmx)
+            // .service(templates::hyperscript)
+            // .service(templates::response_targets)
+            // .service(templates::sse)
+            // .service(templates::action_script)
+            // .service(templates::gif)
+            // .service(index::index)
+            // .service(serial::devices)
+            // .service(serial::stop_device)
+            .service(health::health_check)
     })
     .keep_alive(KeepAlive::Os) // Keep the connection alive; OS handled
     .disable_signals() // Disable the signals to allow the OS to handle the signals

@@ -170,7 +170,7 @@ pub fn get() -> Result<Settings, config::ConfigError> {
         "Building the settings for the {} environment",
         environment.as_str()
     );
-    let settings = match config::Config::builder()
+    let settings = config::Config::builder()
         .add_source(config::File::from(setting_directory.join("base.yaml")))
         .add_source(config::File::from(
             setting_directory.join(environment_filename),
@@ -182,11 +182,7 @@ pub fn get() -> Result<Settings, config::ConfigError> {
                 .prefix_separator("_")
                 .separator("__"),
         )
-        .build()
-    {
-        Ok(settings) => settings,
-        Err(err) => return Err(err),
-    };
+        .build()?;
 
     settings.try_deserialize::<Settings>()
 }
